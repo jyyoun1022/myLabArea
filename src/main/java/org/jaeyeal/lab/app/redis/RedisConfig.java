@@ -26,6 +26,7 @@ public class RedisConfig implements Serializable {
     private int port;
     private String password;
     private int database;
+    // 추가설정 필요
 
     @Bean
     public LettuceConnectionFactory redisConnectionFactory() {
