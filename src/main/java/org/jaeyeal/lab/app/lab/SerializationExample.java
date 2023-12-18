@@ -31,6 +31,8 @@ public class SerializationExample {
 
         // 역직렬화된 객체 출력
         System.out.println("Deserialized Person: " + deserializedPerson);
+
+        System.out.println("");
     }
 
     // 객체를 직렬화하여 파일에 저장하는 메서드
