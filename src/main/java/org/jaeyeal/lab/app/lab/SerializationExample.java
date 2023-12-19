@@ -37,6 +37,17 @@ public class SerializationExample {
 
     // 객체를 직렬화하여 파일에 저장하는 메서드
     private static void serializeObject(Object obj, String filename) {
+//        try (
+//                FileOutputStream fos = new FileOutputStream(filename);
+//                ObjectOutputStream out = new ObjectOutputStream(fos)
+//        ) {
+//            // 직렬화 가능 객체를 바이트 스트림으로 변환하고 파일에 저장
+//            out.writeObject(obj);
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             oos.writeObject(obj);
             System.out.println("Object has been serialized and saved to " + filename);
