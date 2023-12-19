@@ -39,6 +39,8 @@ public class SerializationExample {
     private static void serializeObject(Object obj, String filename) {
 //        try (
 //                FileOutputStream fos = new FileOutputStream(filename);
+        // 데이터를 파일에 바이트 스트림으로 저장하기 위해 사용
+        // 반대로 FileInputStream 은 파일 내용을 읽는 클래스
 //                ObjectOutputStream out = new ObjectOutputStream(fos)
 //        ) {
 //            // 직렬화 가능 객체를 바이트 스트림으로 변환하고 파일에 저장
@@ -47,6 +49,7 @@ public class SerializationExample {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
+//        객체가 직렬화될때 오직 객체의 인스턴스 필드값 만을 저장한다. static 필드나 메서드는 직렬화하여 저장하지 않는다.
 
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             oos.writeObject(obj);
