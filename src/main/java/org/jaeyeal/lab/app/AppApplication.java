@@ -3,10 +3,12 @@ package org.jaeyeal.lab.app;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.*;
 
+@EnableCaching // 스프링에게 캐싱기능이 필요하다고 전달
 @SpringBootApplication
 public class AppApplication {
 
