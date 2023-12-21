@@ -1,0 +1,17 @@
+package org.jaeyeal.lab.app.redis.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class TestDto {
+
+    private String id;
+    private String text;
+
+}
