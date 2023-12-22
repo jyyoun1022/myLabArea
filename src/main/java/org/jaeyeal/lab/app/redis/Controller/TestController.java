@@ -27,7 +27,7 @@ public class TestController {
     @GetMapping("/api/v1/test")
     @Cacheable(value = "TestDto", key = "#id", cacheManager = "redisCacheManager", unless = "#id == ''", condition = "#id.length > 2")
 //    @Cacheable(value = "TestDto", key = "#id", cacheManager = "redisCacheManager")
-    public TestDto getData(@RequestParam(value = "id",name = "id") String id) {
+    public TestDto getData(String id) {
         return testService.getTestSvc(id);
     }
 
