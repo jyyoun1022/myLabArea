@@ -35,6 +35,9 @@ dependencies {
 //	.preoperties 파일을 사용해야하기에
 	implementation 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+	// rabbitMq
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 }
 
 tasks.named('test') {
