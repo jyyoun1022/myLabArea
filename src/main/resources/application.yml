@@ -6,4 +6,7 @@ spring:
     port: 5672
     username: user
     password: user
+  batch:
+    job:
+      enabled: false
 

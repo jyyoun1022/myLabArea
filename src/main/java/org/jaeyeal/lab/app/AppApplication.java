@@ -1,9 +1,12 @@
 package org.jaeyeal.lab.app;
 
+import org.jaeyeal.lab.app.messageQueue.MessageSender;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.*;
@@ -21,6 +24,8 @@ public class AppApplication {
 			System.out.println("resource.getPath() = " + resource.getPath());
 			System.out.println("resource.getURL() = " + resource.getURL());
 			System.out.println("resource.getURI() = " + resource.getURI());
+			System.out.println("===========================================");
+
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -28,5 +33,6 @@ public class AppApplication {
 		new SpringApplicationBuilder(AppApplication.class)
 				.run(args);
 	}
+
 
 }

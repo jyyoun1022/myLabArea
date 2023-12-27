@@ -2,11 +2,14 @@ package org.jaeyeal.lab.app.redis.cache;
 
 import io.lettuce.core.ClientOptions;
 import io.lettuce.core.SocketOptions;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
@@ -14,6 +17,7 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceClientConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -29,6 +33,8 @@ import java.util.Map;
 @Slf4j
 @Configuration
 @EnableCaching
+@ConfigurationProperties(prefix = "spring.redis")
+@Setter
 public class BasicCacheConfig {
 
     private String host;
@@ -36,6 +42,7 @@ public class BasicCacheConfig {
     private String password;
 
     @Bean
+    @Primary
     public RedisConnectionFactory basicCacheRedisConnectionFactory() {
 
         RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration(host,port);
@@ -67,6 +74,7 @@ public class BasicCacheConfig {
     // 스프링 빈의 이름은 CacheManager
     // Save cache data on the RedisServer
     @Bean
+    @Primary
     public CacheManager cacheManager() {
         // RedisCacheConfigurations는 캐시 데이터를 저장하는 RedisCache를 설정하는 제기능 제공
         RedisCacheConfiguration defaultConfig = RedisCacheConfiguration.defaultCacheConfig() // defaultCacheConfig()는 기본값으로 설정된 RedisCacheConfiguration 객체 리턴
