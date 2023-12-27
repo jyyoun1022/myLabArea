@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageSender {
 
-    @Autowired
     private AmqpTemplate rabbitTemplate;
 
     public void sendMessage(String message) {
