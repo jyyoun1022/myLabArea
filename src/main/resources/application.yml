@@ -1,4 +1,8 @@
 spring:
+  #    host: localhost
+#    port: 6379
+#    database: 0
+#    password: 1234
   cache:
     type: redis
 #  rabbitmq:
@@ -9,4 +13,13 @@ spring:
   batch:
     job:
       enabled: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      password: 1q2w3e4r@
+
+
+
 
