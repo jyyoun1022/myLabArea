@@ -14,17 +14,19 @@ public class RedisRepositoryTest {
 
     @Test
     void test() {
-        Person person = new Person("Park", 29);
+        Person person = new Person("Park", 292);
 
-        Person save = personRedisRepository.save(person);
-        System.out.println(save);
+        for (int i =0; i<5; i++) {
+            Person save = personRedisRepository.save(person);
+        }
         //save
 
         Person entity = personRedisRepository.findById(person.getId()).orElseThrow();
         System.out.println(entity);
         // keyspace: id 값을 가져옴
 
-//        personRedisRepository.count();
+        long count = personRedisRepository.count();
+        System.out.println("count = " + count);
         // @RedisHash에 정의되어 있는 keyspace에 속한 키의 개수 반환
 
 //        personRedisRepository.delete(person);

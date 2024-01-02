@@ -9,11 +9,11 @@ import java.time.LocalDateTime;
 
 @Getter
 @Data
-@RedisHash(value = "people", timeToLive = 30)
+@RedisHash(value = "people", timeToLive = 300)
 public class Person {
 
     @Id
-    private String id = "init";
+    private String id;
     private String name;
     private Integer age;
     private LocalDateTime createAt;
