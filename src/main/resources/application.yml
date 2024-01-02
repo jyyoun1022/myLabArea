@@ -1,11 +1,11 @@
 spring:
   cache:
     type: redis
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: user
-    password: user
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
   batch:
     job:
       enabled: false
