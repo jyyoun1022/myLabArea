@@ -15,7 +15,8 @@ public class LocalDatetimeLab {
 
         LocalDateTime parse2 = LocalDateTime.parse(registerDatetime, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         System.out.println("parse2 = " + parse2);
-
+        String parse3 = parse2.format(DateTimeFormatter.ofPattern("yyyyMM"));
+        System.out.println("parse3 = " + parse3);
 
     }
 }
