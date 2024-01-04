@@ -26,5 +26,19 @@ public class JsonObjectLab {
         System.out.println("syncMessageObjectStr = " + syncMessageObjectStr);
 
 
+        System.out.println("syncMessageObject = " + syncMessageObject.size());
+
+
+        JsonObject testObject = new JsonObject();
+        testObject.addProperty("position1", "1");
+        testObject.addProperty("position2", "2");
+
+        JsonObject subObject = new JsonObject();
+        subObject.addProperty("subPosition1", "3");
+        subObject.addProperty("subPosition2", "4");
+        testObject.add("ee", subObject);
+        // JsonObject size는 제일 객체안의 키의 개수를 리턴
+        System.out.println(testObject);
+        System.out.println("testObject.size() = " + testObject.size());
     }
 }
