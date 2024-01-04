@@ -12,8 +12,11 @@ import java.util.concurrent.ConcurrentHashMap;
 @Builder
 public class ConstructorLab {
 
+    @Builder.Default
     private String name = "22"; // 슈크림
+    @Builder.Default
     private int age = 3; // 팥
+    @Builder.Default
     private boolean home = false; // 콜라
 
 
