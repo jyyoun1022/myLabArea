@@ -37,5 +37,18 @@ public class PathLab {
         Path normalize = basePath.normalize();
         System.out.println("normalize = " + normalize);
 
+        System.out.println("===========================================");
+        String syncDirectoryPath = "\\\\192.168.1.224\\Zone_hyoworld\\jy\\multi-sample-9\\smp2\\img3";
+        List<Path> smp2Img3List = Files.walk(Paths.get(syncDirectoryPath)).collect(Collectors.toList());
+        smp2Img3List.forEach(i -> System.out.println(i));
+//        \\192.168.1.224\Zone_hyoworld\jy\multi-sample-9\smp2\img3
+//        \\192.168.1.224\Zone_hyoworld\jy\multi-sample-9\smp2\img3\20230331162202623.jpg
+//        \\192.168.1.224\Zone_hyoworld\jy\multi-sample-9\smp2\img3\img3.jpg
+//        \\192.168.1.224\Zone_hyoworld\jy\multi-sample-9\smp2\img3\img4.jpg
+//        \\192.168.1.224\Zone_hyoworld\jy\multi-sample-9\smp2\img3\img5.jpg
+//        \\192.168.1.224\Zone_hyoworld\jy\multi-sample-9\smp2\img3\img6.jpg
+//        \\192.168.1.224\Zone_hyoworld\jy\multi-sample-9\smp2\img3\img7.jpg
+        // 마지막 경로 부터 , 내부 파일 까지
+
     }
 }
