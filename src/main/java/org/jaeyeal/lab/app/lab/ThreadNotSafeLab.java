@@ -12,10 +12,15 @@ public class ThreadNotSafeLab {
      * 하지만 다른 스레드들은 아무런 작업을 하지못하고 기다릴 수 밖에 없어 자원의 낭비가 발생할 수 있다.
      */
     public static synchronized long plus() {
+        try {
+            Thread.sleep(1);
+        } catch (InterruptedException e) {
+
+        }
         return ++count;
     }
     public static void main(String[] args) throws InterruptedException {
-        int maxCount = 10;
+        int maxCount = 1000;
 
         for (int i =0; i < maxCount; i++) {
             new Thread(() -> {
