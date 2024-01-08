@@ -38,7 +38,7 @@ public class PathLab {
         System.out.println("normalize = " + normalize);
 
         System.out.println("===========================================");
-        String syncDirectoryPath = "\\\\192.168.1.224\\Zone_hyoworld\\jy\\multi-sample-9\\smp2\\img3";
+        String syncDirectoryPath = "\\\\192.168.1.224\\Zone_hyoworld\\jy\\multi-sample-9\\smp1\\img4";
         List<Path> smp2Img3List = Files.walk(Paths.get(syncDirectoryPath)).collect(Collectors.toList());
         smp2Img3List.forEach(i -> System.out.println(i));
 //        \\192.168.1.224\Zone_hyoworld\jy\multi-sample-9\smp2\img3
@@ -49,6 +49,10 @@ public class PathLab {
 //        \\192.168.1.224\Zone_hyoworld\jy\multi-sample-9\smp2\img3\img6.jpg
 //        \\192.168.1.224\Zone_hyoworld\jy\multi-sample-9\smp2\img3\img7.jpg
         // 마지막 경로 부터 , 내부 파일 까지
+        // 단, 이때 Files.walk()에서 maxDepth 를 설정한다면
+        System.out.println("=====");
+        List<Path> maxDepth1List = Files.walk(Paths.get(syncDirectoryPath), 3).filter(i -> Files.isRegularFile(i)).collect(Collectors.toList());
+        maxDepth1List.forEach(i -> System.out.println(i));
 
     }
 }
