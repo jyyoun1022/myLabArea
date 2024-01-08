@@ -6,12 +6,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ConcurrentAccessLab {
     private static int t;
-    private static AtomicInteger atomcT = new AtomicInteger(0);
+    public static synchronized int view() {
+        return t++;
+    }
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
             new Thread(() -> {
-                for (int j = 0; j < 1000; j++)
-                    System.out.println(atomcT.incrementAndGet());
+                for (int j = 0; j < 1000; j++) {
+                    System.out.println(view());
+                }
+
             }).start();
         }
     }
