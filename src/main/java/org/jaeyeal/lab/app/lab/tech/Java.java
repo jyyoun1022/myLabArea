@@ -211,6 +211,21 @@ public class Java {
      *
      */
 
+    // String, StringBuilder, StringBuffer
+    /**
+     * String
+     *      => 새로운 값을 할당할 때마다 새로운 클래스에 대한 객체가 생성
+     *      String에 저장되는 문자열은 private final char[]형태이므로 변경할 수 없다.
+     *          =>String + String + String..
+     *          가비지 컬렉터가 호출되기 전까지 생성된 String 객체들은 Heap에 머물기 때문에 메모리 관리에서 치명적이다.
+     * StringBuilder
+     *      => 메모리에 append하는 방식으로 클래스에 대한 객체를 생성하지 않는다.
+     *      => 비동기처리
+     * StringBuffer
+     *      => 메모리에 append 하는 방식으로 클래스에 대한 객체를 생성하지 않는다.
+     *      => 동기처리
+     */
+
 
 
 
