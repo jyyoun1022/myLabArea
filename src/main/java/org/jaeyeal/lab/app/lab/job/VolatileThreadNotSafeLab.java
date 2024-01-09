@@ -1,4 +1,4 @@
-package org.jaeyeal.lab.app.lab;
+package org.jaeyeal.lab.app.lab.job;
 
 public class VolatileThreadNotSafeLab {
     private static volatile long count = 0;

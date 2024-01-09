@@ -1,4 +1,4 @@
-package org.jaeyeal.lab.app.lab;
+package org.jaeyeal.lab.app.lab.job;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

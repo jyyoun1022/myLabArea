@@ -1,4 +1,4 @@
-package org.jaeyeal.lab.app.lab;
+package org.jaeyeal.lab.app.lab.job;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,9 +1,6 @@
-package org.jaeyeal.lab.app.lab;
+package org.jaeyeal.lab.app.lab.job;
 
 import lombok.*;
-
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 
 @Data
