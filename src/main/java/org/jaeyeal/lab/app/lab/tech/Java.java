@@ -112,5 +112,62 @@ public class Java {
      *  7. 종료
      */
 
+    // 접근 제한자
+    /**
+     * public : 접근에 제한이 없음
+     * private : 자기 자신 클래스 내에서만 접근 가능
+     * default : 동일한 패키지 내에서만 접근 가능
+     * protected : 동일한 패키지 내에서만 접근 가능 + 상속을 이용한 접근 가능
+     */
+
+    // == vs equals
+    /**
+     * ==
+     *      => 참조 비교로 두 객체가 같은 메모리 공간을 가리키는지 확인
+     * equals
+     *      => 두 객체의 내부 값이 같은지 내용을 비교한다.
+     *      => 기본 타입에 대해서는 적용 x
+     */
+
+    // 참조 타입
+    /**
+     * 기본형을 제외하고는 모두 참조형이다.
+     * 참조 타입은 데이터의 크기가 가변적이고, 동적이므로 Heap 영역에서 관리된다.
+     * 데이터는 Heap 영역에서 관리되지만, 메모리의 주소값은 Stack영역에 담긴다.
+     * new 키워드를 이용해 객체를 생성하여 데이터가 생성된 주소를 참조하는 타입
+     * 더이상 참조하는 변수가 없을 때 GC에 의해 삭제된다.
+     */
+
+    // call by value vs call by reference
+    /**
+     * Call by Value(값에 의한 호출)
+     * 함수 호출 시 인자로 전달되는 변수의 값을 복사하여 함수의 인자로 전달
+     * 따라서, 함수 안에서 인자의 값이 변경되어도, 외부의 변수의 값은 변경되지 않는다.
+     *
+     * Call by Reference(참조에 의한 호출)
+     * 함수 호출 시 인자로 전달되는 변수의 레퍼런스를 전달한다.
+     * 따라서, 함수 안에서 인자의 값이 변경되면, 인자로 전달된 변수의 값도 함께 변경된다.
+     *
+     * 자바는 새롭게 지역 변수를 만들어서 값만 복사하고 할당한다. 따라서 Call by Value
+     */
+
+    public static void callMain(String[] args) {
+        int[] array = {1, 2, 3};
+        System.out.println("Before: " + array[0]);
+        modifyArray(array);
+        System.out.println("After: " + array[0]);
+    }
+
+    public static void modifyArray(int[] arr) {
+        arr[0] = 10;
+        System.out.println("Inside method: " + arr[0]);
+    }
+//    Before: 1
+//    Inside method: 10
+//    After: 10
+
+
+
+
 
 }
