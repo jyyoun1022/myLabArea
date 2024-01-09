@@ -81,4 +81,36 @@ public class Java {
      *  Runtime Data Area : 자바 프로그램을 실행할 때, 데이터를 저장
      */
 
+    // JVM 의 실행과정
+    /**
+     * 1. JVM은 OS로부터 메모리(Runtime Data Area)를 할당 받음
+     * 2. 컴파일러(javac)가 소스코드(.java)를 읽어 바이트코드(.class)로 변환
+     * 3. Class Loader를 통해 Class 파일을 JVM내 메모리(Runtime Data Area)로 로딩
+     * 4. 로딩된 Class 파일을 Execution Enginge를 통해서 해석 및 실행
+     */
+    /**
+     *  정리
+     *  1. 컴파일
+     *      => Java 소스는 .java 파일에 저장된다.
+     *      => 소스코드는 java컴파일러(javac)에 의해 바이트 코드로 번역되어 .class 파일에 저장된다.
+     *  2. 로드
+     *      => 클래스 로더 시스템이 컴파일된 클래스 파일을 메모리에 로드한다.
+     *      => 로드된 클래스 파일은 JVM의 메서드 영역(Method Area)에 저장
+     *  3. 링크
+     *      => 로드된 클래스 파일에 대한 링크 작업이 수행된다.
+     *          = Verification(검증) : 클래스 파일이 유효한지
+     *          = Preparation(준비) : 정적 변수들을 기본값으로 초기화합니다.
+     *          = Resolution(해결) : 심볼릭 메모리 참조를 실제 메모리 참조로 변경
+     *  4. 초기화
+     *      => 클래스 초기화 단계에서 정적 변수들이 명시된 값으로 초기화 된다.
+     *      => 클래스의 초기화 블록이 실행됩니다.
+     *  5. 메인 메서드 호출
+     *      => public static void main(String[] args) 메서드를 찾아 실행
+     *  6. 실행
+     *      => 필요 에 따라 다른 메서드들이 호출되고 객체가 생성,
+     *      => 실행 중 발생하는 데이터는 JVM의 스택영역(Stack) 이나 힙(Heap)에 저장
+     *  7. 종료
+     */
+
+
 }
