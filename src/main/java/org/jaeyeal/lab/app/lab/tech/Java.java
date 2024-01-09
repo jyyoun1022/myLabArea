@@ -70,4 +70,15 @@ public class Java {
      *
      */
 
+    // JVM의 구성 요소
+    /**
+     * 자바 프로그램을 실행하는 역할
+     *  - 컴파일를 통해 바이트 코드로 변환된 파일을 JVM에 로딩하여 실행
+     *
+     *  Class-Loader : JVM 내(Runtime Data Area)로 Class 파일을 로드하고 링크
+     *  Execution Engine : 메모리 (Runtime Data Area) 에 적재된 클래스들을 기계어로 변경해 실행
+     *  Garbage Collector : 힙 메모리에서 참조되지 않는 개체들 제거
+     *  Runtime Data Area : 자바 프로그램을 실행할 때, 데이터를 저장
+     */
+
 }
