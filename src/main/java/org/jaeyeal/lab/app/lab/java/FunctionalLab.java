@@ -1,5 +1,7 @@
 package org.jaeyeal.lab.app.lab.java;
 
+import java.util.function.Function;
+
 public class FunctionalLab {
 
     // Function
@@ -23,5 +25,9 @@ public class FunctionalLab {
 
         int result = myAdder.apply(5);
         System.out.println("result = " + result);
+
+        Function<Integer, Integer> myAdder2 = x -> x + 15;
+        Integer result2 = myAdder2.apply(5);
+        System.out.println("result2 = " + result2);
     }
 }
