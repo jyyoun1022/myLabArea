@@ -21,6 +21,32 @@ public class StreamMatchLab {
 
         System.out.println("allPositive = " + allPositive);
 
+        // 하나라도 음수라면 true
+        boolean anyNegative = numbers.stream()
+                .anyMatch(number -> number < 0);
+
+        System.out.println("anyNegative = " + anyNegative);
+
+        UserLab user1 = UserLab.builder()
+                .id(101)
+                .name("user1")
+                .verified(true)
+                .emailAddress("user1@gmail.com")
+                .build();
+
+        UserLab user2 = UserLab.builder()
+                .id(102)
+                .name("user2")
+                .verified(false)
+                .emailAddress("user2@gmail.com")
+                .build();
+
+        List<UserLab> users = Arrays.asList(user1, user2);
+
+        // 모든 유저가 이메일 인증이 되어있다면 true
+        boolean allUserVerified = users.stream()
+                .allMatch(user -> user.isVerified());
+        System.out.println("allUserVerified = " + allUserVerified);
 
 
     }
