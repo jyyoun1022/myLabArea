@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,4 +17,6 @@ public class UserLab {
     private String name;
     private String emailAddress;
     private boolean verified;
+    @Builder.Default
+    private List<Integer>  friendUserIds = new ArrayList<>();
 }
