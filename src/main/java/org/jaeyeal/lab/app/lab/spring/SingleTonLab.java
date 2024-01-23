@@ -1,6 +1,8 @@
 package org.jaeyeal.lab.app.lab.spring;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
@@ -78,5 +80,14 @@ public class SingleTonLab {
          *
          */
 
+
+        ApplicationContext ac = new AnnotationConfigApplicationContext(SingleTonLab.class);
+        SingleTonLab bean = ac.getBean(SingleTonLab.class);
+        System.out.println("bean.getClass() = " + bean.getClass());
+
+        /**  AnnotationConfigApplicationContext의 파라미터로 SingletonLab.class 를 넘기면서
+         * 자동으로 스프링 빈에 등록이 된다. 이것을 꺼내서 출력해보면 단순한 클래스가 아니라
+         *스프링이 CGLIB라는 바이트 코드 조작 라이브러리를 사용해서 AppConfig 클래스를 상속받아 override한 임의의 다른 클래스를 만들고 그 클래스를 스프링 빈으로 등록한 것
+         */
     }
 }
